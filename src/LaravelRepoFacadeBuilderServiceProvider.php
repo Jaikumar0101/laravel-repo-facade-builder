@@ -8,6 +8,7 @@ use Jaikumar0101\LaravelRepoFacadeBuilder\Commands\MakeFacadeCommand;
 use Jaikumar0101\LaravelRepoFacadeBuilder\Commands\MakeEnumCommand;
 use Jaikumar0101\LaravelRepoFacadeBuilder\Commands\MakeInterfaceCommand;
 use Jaikumar0101\LaravelRepoFacadeBuilder\Commands\MakeTraitCommand;
+use Jaikumar0101\LaravelRepoFacadeBuilder\Commands\MakeServiceCommand;
 
 class LaravelRepoFacadeBuilderServiceProvider extends ServiceProvider
 {
@@ -31,6 +32,7 @@ class LaravelRepoFacadeBuilderServiceProvider extends ServiceProvider
                 MakeEnumCommand::class,
                 MakeInterfaceCommand::class,
                 MakeTraitCommand::class,
+                MakeServiceCommand::class,
             ]);
         }
     }

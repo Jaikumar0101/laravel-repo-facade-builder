@@ -9,6 +9,7 @@ A Laravel package that provides convenient Artisan commands for creating reposit
 - 📋 **Enums**: Create PHP 8.1+ enum classes with backing types
 - 🔌 **Interfaces**: Generate interface files
 - 🧩 **Traits**: Create reusable trait files
+- ⚙️ **Services**: Generate service classes
 - 📁 **Subfolder Support**: All commands support nested folder structures
 - ✨ **Auto-namespace**: Automatically handles namespaces based on folder structure
 
@@ -140,6 +141,26 @@ php artisan make:trait Concerns/HasSlug
 This creates:
 - `app/Traits/Concerns/HasSlug.php`
 
+### Make Service
+
+Create a service class:
+
+```bash
+php artisan make:service User
+```
+
+This creates:
+- `app/Services/UserService.php`
+
+**With subfolders:**
+
+```bash
+php artisan make:service Payment/Stripe/StripePayment
+```
+
+This creates:
+- `app/Services/Payment/Stripe/StripePaymentService.php`
+
 ## Examples
 
 ### Complete Repository Pattern Example
@@ -229,7 +250,8 @@ app/
 ├── Facades/          # Facade files
 ├── Enums/            # Enum files
 ├── Interfaces/       # Interface files
-└── Traits/           # Trait files
+├── Traits/           # Trait files
+└── Services/         # Service files
 ```
 
 ## Benefits
@@ -273,6 +295,7 @@ The test suite covers:
 - ✅ Enum creation with backing types
 - ✅ Interface generation
 - ✅ Trait creation
+- ✅ Service creation
 - ✅ Subfolder support for all commands
 - ✅ Namespace handling
 - ✅ Directory creation
@@ -292,3 +315,12 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## Support
 
 If you encounter any issues or have questions, please file an issue on the GitHub repository.
+
+## Changelog
+
+### [Unreleased]
+
+#### Added
+- New `make:service` command to generate service classes in `app/Services/` directory
+- Support for subfolder structures in service generation
+- Comprehensive test coverage for service command
